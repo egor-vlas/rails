@@ -1,0 +1,48 @@
+<ul class="nav justify-content-end navbar-dark bg-dark">
+  <li class="nav-item">
+    <%= link_to 'Friend App', root_path, class:"navbar-brand" %>
+  </li>
+   <li class="nav-item">
+    <!-- home_about_path - about.html is in home directory  -->
+    <%= link_to 'About Us', home_about_path, class:"navbar-brand" %>
+  </li>
+
+
+
+  <% if user_signed_in? %>
+
+    <li class="nav-item">
+      <!-- home_about_path - about.html is in home directory  -->
+      <%= link_to 'Add Friend', new_friend_path, class:"navbar-brand" %>
+    </li>
+
+    <li class="nav-item">
+      <!-- home_about_path - about.html is in home directory  -->
+      <%= link_to 'Sign Out', destroy_user_session_path,
+        method: :delete,
+        class:"navbar-brand" %>
+    </li>
+
+    <li class="nav-item">
+      <!-- home_about_path - about.html is in home directory  -->
+      <%= link_to 'Edit Profile', edit_user_registration_path, class:"navbar-brand" %>
+    </li>
+
+
+  <% else %>
+
+  <li class="nav-item">
+    <!-- home_about_path - about.html is in home directory  -->
+    <%= link_to 'Sign Up', new_user_registration_path, class:"navbar-brand" %>
+  </li>
+
+  <li class="nav-item">
+    <!-- home_about_path - about.html is in home directory  -->
+    <%= link_to 'Sign In', new_user_session_path, class:"navbar-brand" %>
+  </li>
+
+  <% end %>
+
+ 
+
+</ul>
